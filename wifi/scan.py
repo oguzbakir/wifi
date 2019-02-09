@@ -35,7 +35,7 @@ class Cell(object):
         Returns a list of all cells extracted from the output of iwlist.
         """
         try:
-            iwlist_scan = subprocess.check_output(['/sbin/iwlist', interface, 'scan'],
+            iwlist_scan = subprocess.check_output(['sudo', '/sbin/iwlist', interface, 'scan'],
                                                   stderr=subprocess.STDOUT)
         except subprocess.CalledProcessError as e:
             raise InterfaceError(e.output.strip())
